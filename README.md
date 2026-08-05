@@ -267,6 +267,6 @@ Full Stack Developer
 
 ---
 
-# 📄 License
+Live Demo:
+https://bookscout-starter-fullstack-2z6fits4c-hima3117s-projects.vercel.app/
 
-This project is developed for educational and portfolio purposes.
