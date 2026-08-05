@@ -109,7 +109,7 @@ BookScout
 ## Clone Repository
 
 ```bash
-git clone https://github.com/your-username/bookscout.git
+https://github.com/hima3117/BOOKSCOUT-STARTER-fullstack.git
 ```
 
 ---
