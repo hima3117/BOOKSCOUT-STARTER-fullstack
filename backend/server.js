@@ -17,19 +17,40 @@ const app = express();
 connectDB();
 
 // CORS Configuration
+const allowedOrigins = [
+  "https://bookscout-starter-fullstack.vercel.app",
+  "https://bookscout-starter-fullstack-fh5el5wkr-hima3117s-projects.vercel.app",
+];
+
 app.use(
   cors({
-    origin: [
-      "https://bookscout-starter-fullstack.vercel.app",
-      "https://bookscout-starter-fullstack-fh5el5wkr-hima3117s-projects.vercel.app",
-      "https://bookscout-starter-fullstack-levmxcq9k-hima3117s-projects.vercel.app"
-    ],
+    origin: (origin, callback) => {
+      // Allow requests without an origin
+      if (!origin) {
+        return callback(null, true);
+      }
+
+      // Allow main Vercel domain
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      // Allow Vercel preview deployments
+      if (
+        /^https:\/\/bookscout-starter-fullstack-[a-z0-9]+-hima3117s-projects\.vercel\.app$/.test(
+          origin
+        )
+      ) {
+        return callback(null, true);
+      }
+
+      return callback(new Error("Not allowed by CORS"));
+    },
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"]
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
-
 
 // Middleware
 app.use(express.json());
