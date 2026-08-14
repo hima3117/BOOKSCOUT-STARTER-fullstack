@@ -268,5 +268,5 @@ Full Stack Developer
 ---
 
 Live Demo:
-https://bookscout-starter-fullstack-2z6fits4c-hima3117s-projects.vercel.app/
+bookscout-starter-fullstack.vercel.app
 
