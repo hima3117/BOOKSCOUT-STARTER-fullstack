@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://bookscout-starter-fullstack.onrender.com",
+  baseURL: "https://bookscout-starter-fullstack.onrender.com/api",
 });
 
 api.interceptors.request.use((config) => {
