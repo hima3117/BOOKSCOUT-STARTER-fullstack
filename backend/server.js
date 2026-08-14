@@ -16,13 +16,13 @@ const app = express();
 // Database
 connectDB();
 
-
 // CORS Configuration
 app.use(
   cors({
     origin: [
       "https://bookscout-starter-fullstack.vercel.app",
-      "https://bookscout-starter-fullstack-fh5el5wkr-hima3117s-projects.vercel.app"
+      "https://bookscout-starter-fullstack-fh5el5wkr-hima3117s-projects.vercel.app",
+      "https://bookscout-starter-fullstack-levmxcq9k-hima3117s-projects.vercel.app"
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
